@@ -1,6 +1,5 @@
 FROM node:16
 RUN apt-get update && apt-get install time libjemalloc2
-# FROM node:16-alpine
 WORKDIR /app
 COPY . ./
 RUN yarn install --production --frozen-lockfile --non-interactive

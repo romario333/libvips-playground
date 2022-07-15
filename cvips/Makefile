@@ -1,4 +1,3 @@
-# TODO: optimize build
 CC = gcc
 CFLAGS = -Wall -g
 
