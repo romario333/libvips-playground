@@ -1,0 +1,13 @@
+{
+  "name": "govips",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "docker build -t govips . && docker run -it -v $(pwd)/out:/app/out -v $(pwd)/../images:/app/images govips",
+    "clean": "rm -rf out"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

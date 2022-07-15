@@ -1,0 +1,16 @@
+{
+  "name": "sharp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "docker build -t sharp . && docker run -it -v $(pwd)/out:/usr/src/app/out -v $(pwd)/../images:/app/images sharp",
+    "clean": "rm -rf out"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "sharp": "^0.30.7"
+  }
+}

@@ -1,0 +1,15 @@
+{
+    "name": "libvips-playground",
+    "private": true,
+    "workspaces": [
+      "*/"
+    ],
+    "scripts": {
+        "sharp": "yarn workspace sharp start",
+        "pyvips": "yarn workspace pyvips start",
+        "govips": "yarn workspace govips start",
+        "cvips": "yarn workspace cvips start",
+        "clean": "yarn workspaces run clean"
+    }
+  }
+  
