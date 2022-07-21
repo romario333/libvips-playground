@@ -1,0 +1,12 @@
+FROM debian:bullseye-slim
+
+RUN apt-get update && apt-get -y install build-essential libvips-dev libjemalloc2 time
+
+WORKDIR /app
+
+COPY . ./
+
+RUN make
+
+ENV LD_PRELOAD /usr/lib/aarch64-linux-gnu/libjemalloc.so.2
+ENTRYPOINT ["/usr/bin/time", "-v", "/app/cvips"]

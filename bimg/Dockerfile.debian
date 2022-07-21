@@ -1,0 +1,17 @@
+FROM debian:bullseye-slim
+
+RUN apt-get update && apt-get -y install build-essential libvips-dev libjemalloc2 time wget
+RUN wget -O go.tar.gz https://go.dev/dl/go1.18.4.linux-arm64.tar.gz && tar -C /usr/local -xzf go.tar.gz
+ENV PATH="/usr/local/go/bin:${PATH}"
+
+WORKDIR /app
+
+COPY go.* ./
+RUN go mod download
+
+COPY . ./
+
+RUN go build -v -o server
+
+#ENV LD_PRELOAD /usr/lib/aarch64-linux-gnu/libjemalloc.so.2
+ENTRYPOINT ["/usr/bin/time", "-v", "/app/server"]

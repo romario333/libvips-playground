@@ -1,10 +1,10 @@
 {
-  "name": "cvips",
+  "name": "bimg",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "docker build -f Dockerfile.alpine -t cvips . && docker run -it -v $(pwd)/out:/app/out -v $(pwd)/../images:/app/images cvips",
+    "start": "docker build -t bimg -f Dockerfile.alpine . && docker run -it -v $(pwd)/out:/app/out -v $(pwd)/../images:/app/images bimg",
     "clean": "rm -rf out"
   },
   "keywords": [],
